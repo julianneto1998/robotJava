@@ -102,7 +102,9 @@ public class DCMotor{
 
     // Delays exectuion
     private static void waitSeconds(double secondsDouble) {
-	long milliSecondsLong =  (long) (secondsDouble * 1000);
+	// Truncates all values after the thousands value and converts
+	// to long.
+	long milliSecondsLong =  (long) (secondsDouble * 1000);  
 	try {
 	    Thread.sleep(milliSecondsLong);
 	} catch (Exception e) {
