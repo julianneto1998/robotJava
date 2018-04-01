@@ -69,8 +69,11 @@ public class DCMotor{
     // Sets the output state of the pins in the pin Array
     private void setPins(int state0, int state1) {
 	try {
+	    System.out.printf("(pinAry[0], state0, pinAry[1], state1) = (%d, %d, %d, %d)\n",
+			      pinAry[0], state0, pinAry[1], state1);
 	    runtime.exec(String.format("gpio write %d %d", pinAry[0], state0));
 	    runtime.exec(String.format("gpio write %d %d", pinAry[1], state1));
+
 	} catch (Exception e) {
 	    System.out.println("Exception occured: " + e.getMessage());
 	}
